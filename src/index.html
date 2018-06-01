@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <title>Doctor Locator</title>
   </head>
   <body>
     <div class="container">
-      <h1>Find a Doctor</h1>
-      <div>
-        <label for="dr-name">Search Doctor by Name:</label>
-        <input id="dr-name" type="text">
-        <button class="btn-success" id="search-by-name">Search</button>
+      <div class= "jumbotron">
+        <h1>Find a Doctor</h1>
       </div>
-      <div>
-        <label for="specialty">Search Doctor by Specialty:</label>
-        <input id="specialty" type="text" placeholder="eg. Dermatologist">
-        <button class="btn-success" id="search-by-specialty">Search</button>
+      <div class="jumbotron">
+        <div>
+          <label for="dr-name">Search Doctor by Name:</label>
+          <input id="dr-name" type="text">
+          <button class="btn-info" id="search-by-name">Search</button>
+        </div>
+        <div>
+          <label for="specialty">Search Doctor by Specialty:</label>
+          <input id="specialty" type="text" placeholder="eg. dermatologist">
+          <button class="btn-info" id="search-by-specialty">Search</button>
+        </div>
+        <div class="errors"></div>
+        <div class="showDoctors"></div>
       </div>
-      <div class="errors"></div>
-      <div class="showDoctors"></div>
     </div>
   </body>
 </html>
