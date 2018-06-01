@@ -26,10 +26,14 @@ $(document).ready(function() {
       if (response.data != "") {
         $('.showDoctors').text(`These are the doctors with the name ${doctorName} in your area:`);
         response.data[0].practices.forEach(function(practiceInfo) {
-          $('.showDoctors').append(`<ul><li>${practiceInfo.name}</li> <ul><li>Address: <ul><li>${practiceInfo.visit_address.street}</li> <li>${practiceInfo.visit_address.city}, ${practiceInfo.visit_address.state}</li> <li>${practiceInfo.visit_address.zip}</li></ul> <li>Phone Number: ${practiceInfo.phones[0].number}</li> <li> Website: ${practiceInfo.website}</li> <li>Accepting New Patients: ${practiceInfo.accepts_new_patients}</li></ul></ul>`);
-      })
+          response.data[0].specialties.forEach(function(bio) {
+            $('.showDoctors').append(`<ul><li>${practiceInfo.name}</li> <ul><li>Address: <ul><li>${practiceInfo.visit_address.street}</li> <li>${practiceInfo.visit_address.city}, ${practiceInfo.visit_address.state}</li> <li>${practiceInfo.visit_address.zip}</li></ul> <li>Phone Number: ${practiceInfo.phones[0].number}</li> <li> Website: ${practiceInfo.website}</li> <li>Accepting New Patients: ${practiceInfo.accepts_new_patients}</li><li>Bio: ${bio.description}</li></ul></ul>`);
+          })
+        })
+      // } else if ($('#dr-name').val() == "") {
+      //   $('.showDoctors').text('Search field empty;');
       } else {
-        $('.showDoctors').text('Sorry, there are no Doctors in your area.')
+        $('.showDoctors').text('Sorry, there are no Doctors in your area with that name.');
       }
     }
   });
@@ -59,10 +63,14 @@ $(document).ready(function() {
       if (response.data != "") {
         $('.showDoctors').text(`These are the doctors with the title of ${specialty} in your area:`);
         response.data[0].practices.forEach(function(practiceInfo) {
-          $('.showDoctors').append(`<ul><li>${practiceInfo.name}</li> <ul><li>Address: <ul><li>${practiceInfo.visit_address.street}</li> <li>${practiceInfo.visit_address.city}, ${practiceInfo.visit_address.state}</li> <li>${practiceInfo.visit_address.zip}</li></ul> <li>Phone Number: ${practiceInfo.phones[0].number}</li> <li> Website: ${practiceInfo.website}</li> <li>Accepting New Patients: ${practiceInfo.accepts_new_patients}</li></ul></ul>`);
-      })
+          response.data[0].specialties.forEach(function(bio) {
+            $('.showDoctors').append(`<ul><li>${practiceInfo.name}</li> <ul><li>Address: <ul><li>${practiceInfo.visit_address.street}</li> <li>${practiceInfo.visit_address.city}, ${practiceInfo.visit_address.state}</li> <li>${practiceInfo.visit_address.zip}</li></ul> <li>Phone Number: ${practiceInfo.phones[0].number}</li> <li> Website: ${practiceInfo.website}</li> <li>Accepting New Patients: ${practiceInfo.accepts_new_patients}</li><li>Bio: ${bio.description}</li></ul></ul>`);
+          })
+        })
+      // } else if ($('#specialty').val() == "") {
+      //   $('.showDoctors').text('Search field empty;')
       } else {
-        $('.showDoctors').text('Sorry, there are no Doctors in your area.')
+        $('.showDoctors').text('Sorry, there are no Doctors in your area with that name.')
       }
     }
   });

@@ -2,22 +2,23 @@
 <html>
   <head>
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src="weather-interface.js"></script> -->
+
     <title>Doctor Locator</title>
   </head>
   <body>
     <div class="container">
       <h1>Find a Doctor</h1>
-      <label for="dr-name">Search Doctors by Name:</label>
-      <input id="dr-name" type="text">
-      <button class="btn-success" id="search-by-name">Search</button>
-<br>
-      <label for="specialty">Search Doctors by Specialty:</label>
-      <input id="specialty" type="text" placeholder="eg. Dermatologist">
-      <button class="btn-success" id="search-by-specialty">Search</button>
-
+      <div>
+        <label for="dr-name">Search Doctor by Name:</label>
+        <input id="dr-name" type="text">
+        <button class="btn-success" id="search-by-name">Search</button>
+      </div>
+      <div>
+        <label for="specialty">Search Doctor by Specialty:</label>
+        <input id="specialty" type="text" placeholder="eg. Dermatologist">
+        <button class="btn-success" id="search-by-specialty">Search</button>
+      </div>
       <div class="errors"></div>
-      <div class="loading"></div>
       <div class="showDoctors"></div>
     </div>
   </body>
