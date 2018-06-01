@@ -4,7 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');  // new line
 const Dotenv = require('dotenv-webpack');
 
-
 module.exports = {
   entry: './src/main.js',
   output: {
